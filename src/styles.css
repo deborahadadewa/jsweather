@@ -7,6 +7,7 @@
         width: 58%;
         text-align: center;
         padding: 5%;
+        padding-bottom: 0%;
         background-image: linear-gradient(to top, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%);
     }
     
@@ -16,12 +17,32 @@
         margin-bottom: 5;
     }
     
+    p.github-link-paragraph {
+        display: block;
+        font-size: 0.8em;
+        margin: 20% auto 0;
+        opacity: 0.8;
+        padding-bottom: 2%;
+    }
+    
+    .github-link {
+        color: #B1ACE3;
+        /* opacity: 0.65; */
+        text-decoration: none;
+    }
+    
+    .github-link:hover {
+        color: #7272AE;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    
     .enter-city-form {
         box-shadow: -1px 4px 5px rgb(0 0 0 / 10%);
     }
     
     .btn-outline-light:hover {
-        color: #5f5f66;
+        color: #4D4D6D;
         background-color: #A9A6DF;
     }
     
