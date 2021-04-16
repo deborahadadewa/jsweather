@@ -1,15 +1,13 @@
 let cityHeading = document.querySelector("#city-heading");
 let currentTempLabel = document.querySelector("#current-temp-label");
 
-let currentTempUnit = "C";
-
 let btnCelsius = document.querySelector("#btn-celsius");
 let btnFarenheit = document.querySelector("#btn-farenheit");
+let currentTempCelsius = null;
 
 let apiKey = "2527ce6a742a6e5a11df614a9264b458";
 let endPoint = `https://api.openweathermap.org/data/2.5/weather?`;
 
-///Display time and date info
 function formatTime(time) {
     if (time < 10) {
         return `0${time}`;
@@ -41,24 +39,20 @@ let currentTimeLabel = document.querySelector("#current-time");
 currentTimeLabel.innerHTML = formatDate(new Date());
 
 function displayWeather(response) {
-    //Display city name
     let city = response.data.name;
     cityHeading.innerHTML = city;
 
-    //Display temperature
-    currentTempLabel.innerHTML = Math.round(response.data.main.temp);
+    currentTempCelsius = response.data.main.temp;
+    currentTempLabel.innerHTML = Math.round(currentTempCelsius);
 
-    //Display weather description
     let weatherDescriptionLabel = document.querySelector("#weather-description");
     weatherDescriptionLabel.innerHTML = response.data.weather[0].description;
 
-    //Display weather icon
     let currentTempIcon = document.querySelector("#current-temp-icon");
     let weatherIconId = response.data.weather[0].icon;
     let iconUrl = `https://openweathermap.org/img/wn/${weatherIconId}@2x.png`;
     currentTempIcon.src = iconUrl;
 
-    //Display other weather details
     let humidityLabel = document.querySelector("#humidity");
     let windLabel = document.querySelector("#wind");
 
@@ -69,7 +63,6 @@ function displayWeather(response) {
 ///Get weather by city search
 function searchCity(city) {
     if (city) {
-        //Make weather API call
         let apiUrlCity = `${endPoint}q=${city}&appid=${apiKey}&units=metric`;
         axios.get(apiUrlCity).then(displayWeather);
     } else {
@@ -105,22 +98,17 @@ let locationbutton = document.querySelector("#location-button");
 locationbutton.addEventListener("click", retrieveLocation);
 
 ///Convert temperature units
-function showCelsius(event) {
-    let currentTemp = Number(currentTempLabel.innerHTML);
-    if (currentTempUnit === "F") {
-        currentTemp = Math.round(((currentTemp - 32) * 5) / 9);
-        currentTempLabel.innerHTML = currentTemp;
-        currentTempUnit = "C";
-    }
+function showFarenheit(event) {
+    btnCelsius.classList.remove("active");
+    btnFarenheit.classList.add("active");
+    currentTempLabel.innerHTML = Math.round((currentTempCelsius * 9) / 5 + 32);
 }
 
-function showFarenheit(event) {
-    let currentTemp = Number(currentTempLabel.innerHTML);
-    if (currentTempUnit === "C") {
-        currentTemp = Math.round((currentTemp * 9) / 5 + 32);
-        currentTempLabel.innerHTML = currentTemp;
-        currentTempUnit = "F";
-    }
+function showCelsius(event) {
+    btnCelsius.classList.add("active");
+    btnFarenheit.classList.remove("active");
+    let currentTemp = Math.round(currentTempCelsius);
+    currentTempLabel.innerHTML = currentTemp;
 }
 btnCelsius.addEventListener("click", showCelsius);
 btnFarenheit.addEventListener("click", showFarenheit);

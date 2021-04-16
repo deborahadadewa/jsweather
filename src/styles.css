@@ -1,10 +1,14 @@
+    body {
+        background: #F9F7FE;
+    }
+    
     .container {
         border-radius: 4px;
+        box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
         color: rgb(248, 249, 250);
-        ;
         display: block;
         margin: 70px auto 0;
-        width: 58%;
+        max-width: 58%;
         text-align: center;
         padding: 5%;
         padding-bottom: 0%;
@@ -17,7 +21,7 @@
         margin-bottom: 5;
     }
     
-    p.github-link-paragraph {
+    footer {
         display: block;
         font-size: 0.8em;
         margin: 20% auto 0;
@@ -86,7 +90,7 @@
     
     .weather-description {
         color: #000;
-        margin-bottom: 10%;
+        margin-bottom: 8%;
         opacity: 0.65;
         text-transform: capitalize;
     }
@@ -94,6 +98,7 @@
     div.current-temp {
         padding-left: 4rem;
         margin-top: 30px;
+        margin-bottom: 3%;
     }
     
     h2.current-temp {
@@ -119,7 +124,7 @@
         background: none;
     }
     
-    .btn-temp-convert-group button:focus {
+    .btn-temp-convert-group button.active {
         color: white;
         font-weight: bold;
         outline-style: none;
@@ -131,12 +136,12 @@
         padding: 20px 5px;
     }
     
-    .next-forecasts {
+    .forecast {
         padding: 5% 0 5%;
         font-size: 0.9em;
     }
     
-    .future-temp-icon {
+    .forecast-icon {
         font-size: 32px;
     }
     
@@ -159,7 +164,7 @@
             width: 100%;
             width: fit-content;
         }
-        .next-forecasts {
+        .forecast {
             padding: 10% 5% 15%;
             opacity: 0.7;
         }
@@ -169,7 +174,7 @@
         .current-temp-icon i {
             font-size: 50px;
         }
-        .future-temp-icon {
+        .forecast-icon {
             font-size: 29px;
             opacity: 0.4;
         }
