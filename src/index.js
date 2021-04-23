@@ -17,23 +17,12 @@ function formatTime(time) {
 }
 
 function formatDate(dateInput) {
-    let daysArray = [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-    ];
-    let date = dateInput;
-    let day = daysArray[date.getDay()];
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-
-    minutes = formatTime(minutes);
-    hours = formatTime(hours);
-    return `${day}, ${hours}:${minutes}`;
+    return `${dateInput.toLocaleTimeString([], {
+    hour12: true,
+    hour: "numeric",
+    minute: "2-digit",
+    weekday: "long",
+  })}`;
 }
 let currentTimeLabel = document.querySelector("#current-time");
 currentTimeLabel.innerHTML = formatDate(new Date());
@@ -41,6 +30,8 @@ currentTimeLabel.innerHTML = formatDate(new Date());
 function displayWeather(response) {
     let city = response.data.name;
     cityHeading.innerHTML = city;
+    console.log("reponse says:");
+    console.log(response.data);
 
     currentTempCelsius = response.data.main.temp;
     currentTempLabel.innerHTML = Math.round(currentTempCelsius);
@@ -53,8 +44,17 @@ function displayWeather(response) {
     let iconUrl = `https://openweathermap.org/img/wn/${weatherIconId}@2x.png`;
     currentTempIcon.src = iconUrl;
 
+    let precipitationLabel = document.querySelector("#precipitation");
     let humidityLabel = document.querySelector("#humidity");
     let windLabel = document.querySelector("#wind");
+
+    if (response.data.rain) {
+        precipitationLabel.innerHTML = `Precipitation: ${response.data.rain["1h"]} mm`;
+    } else if (response.data.snow) {
+        precipitationLabel.innerHTML = `Precipitation: ${response.data.snow["1h"]} mm`;
+    } else {
+        precipitationLabel.innerHTML = `Precipitation: 0%`;
+    }
 
     humidityLabel.innerHTML = `Humidity: ${response.data.main.humidity}%`;
     windLabel.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
@@ -66,7 +66,7 @@ function searchCity(city) {
         let apiUrlCity = `${endPoint}q=${city}&appid=${apiKey}&units=metric`;
         axios.get(apiUrlCity).then(displayWeather);
     } else {
-        cityHeading.innerHTML = "Please enter a city :)";
+        cityHeading.innerHTML = "Please enter a city";
     }
 }
 
@@ -114,4 +114,4 @@ btnCelsius.addEventListener("click", showCelsius);
 btnFarenheit.addEventListener("click", showFarenheit);
 
 //Default city
-searchCity("Toronto");
+searchCity("Monrovia");

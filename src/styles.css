@@ -1,181 +1,185 @@
-    body {
-        background: #F9F7FE;
-    }
-    
-    .container {
-        border-radius: 4px;
-        box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
-        color: rgb(248, 249, 250);
-        display: block;
-        margin: 70px auto 0;
-        max-width: 58%;
-        text-align: center;
-        padding: 5%;
-        padding-bottom: 0%;
-        background-image: linear-gradient(to top, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%);
-    }
-    
-    h1 {
-        font-size: 20;
-        margin-top: 30px;
-        margin-bottom: 5;
-    }
-    
-    footer {
-        display: block;
-        font-size: 0.8em;
-        margin: 20% auto 0;
-        opacity: 0.8;
-        padding-bottom: 2%;
-    }
-    
-    .github-link {
-        color: #B1ACE3;
-        /* opacity: 0.65; */
-        text-decoration: none;
-    }
-    
-    .github-link:hover {
-        color: #7272AE;
-        cursor: pointer;
-        text-decoration: none;
-    }
-    
-    .enter-city-form {
-        box-shadow: -1px 4px 5px rgb(0 0 0 / 10%);
-    }
-    
-    .btn-outline-light:hover {
-        color: #4D4D6D;
-        background-color: #A9A6DF;
-    }
-    
-    .btn-outline-light:focus {
-        outline-color: red;
-    }
-    
-    .current-weather-details {
-        box-sizing: border-box;
-        box-shadow: -1px 4px 5px rgb(0 0 0 / 10%);
-        color: #3e3e44;
-        display: block;
-        font-size: 0.9em;
-        list-style: none;
-        margin: 5% 0 3% 0;
-        padding: 0 0 2% 0;
-        padding-left: 0;
-    }
-    
-    .current-weather-details li {
-        color: rgb(255 255 255 / 50%);
-        display: inline;
-        list-style: none;
-    }
-    
-    input.user-input {
-        background: none;
-    }
-    
-    input.user-input::placeholder {
-        color: white;
-    }
-    
-    input.user-input:focus {
-        background: none;
-    }
-    
-    .current-time {
-        margin-bottom: 0;
-    }
-    
-    .weather-description {
-        color: #000;
-        margin-bottom: 8%;
-        opacity: 0.65;
-        text-transform: capitalize;
-    }
-    
-    div.current-temp {
-        padding-left: 4rem;
-        margin-top: 30px;
-        margin-bottom: 3%;
-    }
-    
-    h2.current-temp {
-        font-size: 44px;
-        display: inline;
-        text-align: center;
-        font-size: 5em;
-        vertical-align: top;
-        margin: 0 0 10 0;
-        line-height: 0.8em;
-    }
-    
-    .btn-temp-convert-group {
-        opacity: 0.7;
-    }
-    
-    .btn-temp-convert-group button {
-        display: inline;
-        color: #080808;
-        font-weight: 400;
-        vertical-align: top;
-        border: none;
-        background: none;
-    }
-    
-    .btn-temp-convert-group button.active {
-        color: white;
-        font-weight: bold;
-        outline-style: none;
-    }
-    
-    .current-temp-icon i {
-        font-size: 70px;
-        margin-top: 8%;
-        padding: 20px 5px;
-    }
-    
-    .forecast {
-        padding: 5% 0 5%;
-        font-size: 0.9em;
-    }
-    
-    .forecast-icon {
-        font-size: 32px;
-    }
-    
-    .hi,
-    .lo {
-        display: inline;
-    }
-    
-    .lo {
-        opacity: 0.7;
-    }
-    
-    @media only screen and (max-device-width: 480px) {
         body {
-            margin: 128px auto 0%;
+            background: #F9F7FE;
         }
+        
         .container {
-            margin: 0 auto;
-            border-radius: 0;
-            width: 100%;
-            width: fit-content;
+            background-image: linear-gradient(to top, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%);
+            border-radius: 4px;
+            box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
+            color: #F9F7FE;
+            display: block;
+            margin: 70px auto 0;
+            max-width: 58%;
+            padding: 5%;
+            padding-bottom: 0%;
+            text-align: center;
         }
-        .forecast {
-            padding: 10% 5% 15%;
+        
+        h1 {
+            margin-top: 30px;
+            margin-bottom: 5;
+        }
+        
+        p {
+            font-size: 0.87em;
+        }
+        
+        footer {
+            display: block;
+            font-size: 0.8em;
+            margin: 5% auto 0;
+            opacity: 0.7;
+            padding-bottom: 2%;
+        }
+        
+        .enter-city-form {
+            box-shadow: -1px 4px 5px rgb(0 0 0 / 10%);
+        }
+        
+        input.user-input,
+        input.user-input:focus,
+        input.user-input::placeholder {
+            background: none;
+            color: #F9F7FE;
+        }
+        
+        .input-buttons:hover {
+            background-color: #A9A6DF;
+            color: #4D4D6D;
             opacity: 0.7;
         }
+        
+        .current-time,
+        .weather-description {
+            font-size: 0.8em;
+            opacity: 0.7;
+        }
+        
+        .current-time {
+            margin-bottom: 0;
+        }
+        
+        .weather-description {
+            margin-bottom: 8%;
+        }
+        
+        .weather-description::first-letter {
+            text-transform: capitalize;
+        }
+        
+        div.current-temp {
+            padding-left: 4rem;
+            margin-top: 30px;
+            margin-bottom: 3%;
+        }
+        
         h2.current-temp {
-            font-size: 58px;
+            font-size: 44px;
+            display: inline;
+            text-align: center;
+            font-size: 5em;
+            vertical-align: top;
+            margin: 0 0 10 0;
+            line-height: 0.8em;
         }
-        .current-temp-icon i {
-            font-size: 50px;
+        
+        .btn-temp-convert-group button {
+            display: inline;
+            color: #080808;
+            font-weight: 400;
+            vertical-align: top;
+            border: none;
+            background: none;
+            opacity: 0.7;
         }
+        
+        .btn-temp-convert-group button.active {
+            color: #F9F7FE;
+            font-weight: bold;
+            outline-style: none;
+            opacity: 1;
+        }
+        
+        .btn-temp-convert-group button:not(.active) {
+            opacity: 0.5;
+        }
+        
+        .current-temp-icon {
+            height: 10;
+            margin-top: 1.3%;
+        }
+        
+        .weather-overview {
+            box-sizing: border-box;
+            box-shadow: -1px 4px 5px rgb(0 0 0 / 10%);
+            color: #B3ADE3;
+            display: block;
+            font-size: 0.8em;
+            list-style: none;
+            margin: 5% 0 3% 0;
+            padding: 0% 0 2% 0;
+        }
+        
+        .weather-overview li {
+            color: rgb(255 255 255 / 50%);
+            display: inline;
+            list-style: none;
+        }
+        
+        .forecast {
+            padding: 5% 0 5%;
+            font-size: 0.8em;
+            opacity: 0.7;
+        }
+        
         .forecast-icon {
-            font-size: 29px;
-            opacity: 0.4;
+            font-size: 32px;
         }
-    }
+        
+        .hi,
+        .lo {
+            display: inline;
+        }
+        
+        .lo {
+            opacity: 0.7;
+        }
+        
+        @media only screen and (max-device-width: 480px) {
+            body {
+                margin: 20% auto 0%;
+                padding: 0;
+                position: relative;
+            }
+            .container {
+                margin: 0 auto;
+                border-radius: 0;
+                max-width: 95%;
+            }
+            .forecast {
+                padding: 10% 5% 1%;
+                opacity: 0.7;
+            }
+            h2.current-temp {
+                font-size: 58px;
+            }
+            .current-temp-icon i {
+                font-size: 50px;
+            }
+            .forecast-icon {
+                font-size: 20px;
+                opacity: 0.4;
+            }
+        }
+        
+        .github-link {
+            color: #B1ACE3;
+            /* opacity: 0.65; */
+            text-decoration: none;
+        }
+        
+        .github-link:hover {
+            color: #7272AE;
+            cursor: pointer;
+            text-decoration: none;
+        }
