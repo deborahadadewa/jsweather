@@ -218,5 +218,5 @@ let locationbutton = document.querySelector("#location-button");
 locationbutton.addEventListener("click", retrieveLocation);
 
 //Default city
-searchCity("Botswana");
+searchCity("Tema");
 toggleForecast();
