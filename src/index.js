@@ -166,9 +166,7 @@ function searchCity(city) {
                 `<p>I've traveled around the world<br /> 
                 Through storm and rain<br />
                 But I can't seem to find a city named <span>"${city}"</span>.<br />
-                What I want to say<br />
-                In simpler terms is</p>
-                <p>Please check your spelling and try again ;).</p>`,
+                <p>Just check your spelling and try again ;).</p>`,
                 "general"
             );
         });
