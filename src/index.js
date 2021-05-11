@@ -167,8 +167,8 @@ function searchCity(city) {
                 Through storm and rain<br />
                 But I can't seem to find a city named <span>"${city}"</span>.<br />
                 What I want to say<br />
-                In simpler terms</p>
-                <p>Is please check your spelling and try again ;).</p>`,
+                In simpler terms is</p>
+                <p>Please check your spelling and try again ;).</p>`,
                 "general"
             );
         });
