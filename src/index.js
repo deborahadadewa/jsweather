@@ -205,8 +205,8 @@ function retrieveLocation(event) {
         },
         (error) => {
             displayError(
-                `<p>I can't find you anywhere this on planet<br/> 
-                Please turn on your location or enter your current city in the search bar :) </p>`,
+                `<p>I can't find you anywhere on this planet<br/> 
+                Please turn on your location or enter your current city using the search bar :) </p>`,
                 "location"
             );
         }
